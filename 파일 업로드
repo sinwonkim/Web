@@ -1,0 +1,44 @@
+웹 브라우저를 통해서 파일을 전송하기 위한 폼구성
+HTML에서 form 태그의 속성들 중 input 태그들이 있다. 이들 중 <input type="file">태그는 파일을 선택할 수 있는 창을 호출한다.
+호출된 창에서 선택된 파일을 전송하기 위해서 반드시 form 태그의 속성들 중 method와 enctype을 다음과 같이 지정해야 한다.
+
+파일을 전송해서 업로드 하기 위해서 필요한 form 태그와 input 태그를 지정하는 방법 
+ex)
+<form name="fileName" method="post" enctype ="multipart/form-data">
+
+<input type="file" name="selectFile">
+</form>
+
+method는 전송 방식
+action은 전송할 목적지
+enctype은 전송되는 데이터 형식
+
+전송한 폼에 담겨진 파라미터들에 대한 이름과 값을 얻어내기 위해 그리고 <input type="file">로 지정된 파일을 서버상의 한 폴더에 
+업로드 하기 위해서 특별한 컴포넌트가 필요함. 파일 업로드를 위한 컴포넌트는 종류가 몇가지 있다.
+but www.servlets.com에서 제공하는 cos.jar파일을 사용하도록 함  
+
+JAR 는 여러개의 자바 클래스 파일과, 클래스들이 이용하는
+관련리소스 및 메타데이를 하나의 파일로 모아서 
+자바 플랫폼에 응용 소프트웨어나 라이브러리를 배포하기
+위한 소프트웨어 패키지 파일 포맷이다.
+
+cos.jar를 Tomcat에 기본적으로 내장되어 있지 않은 외부의 패키지이다.
+외부의 패키지는 WEB-INF/lib 폴더에 위치해야 되지만 WEB-INF는 각각의 웹 어플리케션에 이 폴더가 존재함  
+cos.jar 팡리을  lib폴더에 넣어두고 필요한 클래스 파일을 임포트만 해주면 자동적으로 해당 클래스 파일을 사용할 수 있기 떄문에 
+꼭 압축을 해제할 필요는 없다. 
+MultipartRequest 클래스를 통해 파일 업로드 구현을 많이함 
+
+파일업로드 및 폼 요소를 처리를 위해서 해야할 부분은
+
+가장 첫 번째로 해야할 부분은  폼 enctype 속성을 multipart/form-data로 지정한 폼에 담겨진 파라미터를 읽어오기 위해서 
+MultipartRequest의 객체를 생성해야 한다. 이 객체를 통해서 파일 업로드를 구현할 수 있다.
+
+MultipartRequest 객체를 생성한 후 객체를 통해서 MultipartRequest 클래스에서 제공하는 메소드들을 사용하면 쉽게 파일 업로드와 파라미터를
+읽어올 수 있다.
+
+ MultipartRequest의 생성자 
+ MultipartRequest의 생성자는 종류가 많음 cos.jar에 있는 MultipartRequest 클래스의 생성자 중 다음의 생성자는 한글 인코딩,업로드 되는 파일이
+ 기존의 파일과 중복될 떄의 단점을 해결한 생성자임 
+ 
+ 그래서 이 생성자를 사용하여 MultipartRequest의 객체를 생성함 
+

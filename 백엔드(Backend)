@@ -1,0 +1,44 @@
+The parts of the backend
+
+Server 
+- 그냥 컴퓨터,메모리,하드 드라이브,네트워킹 카드 등 서버가 엄청나게 큼 트래픽 처리 때문에  서버에 접근하기 위해서는 
+  인터넷에 연결이 되어있어야 함  서버는 리눅스,윈도우,애플
+- 서버는 하드드라이브   하드 드라이브에 어플리케이션 코드를 저장함 어딘가에 저장을 해야함
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Application 
+- 파이썬,루비,노드JS등   어플리케이션도 항상 작동하고 있음   ex) 포토샾,구글 크롬 
+- 서버가 같이 작업할 수 있게  애플리케이션이 데이터베이스와 대화를 함 
+  데이터베이스에 어플리케이션이 저장을 하고 정보를 얻음  하드웨어에 저장하는 것도 데이터베이스임 정보니깐 
+  허나 차이점은 데이터베이스는 테이블,칼럼,rows 등이 있음 
+- database와 대화를 하기 위해서는 SQL을 알아야함 sequential query language
+- 모든 database들이 SQL과 대화를 하는 것은 아님
+  대다수의 relational databases들은 SQL과 작업을 해야함 그래서 이를 위해서 SQL을 알아야 함 
+  MongoDB  and graph database 들은 SQL이 필요하지 않음 
+
+ex)
+server는 query object를 JSON object로 변경함,   
+왜냐면 react.js는 query object를 이해 못해서            요청한 정보를 데이터베이스에서 찾아  query object를 돌려
+jquery ,Html등 필요한 언어로 번역해서 돌려줌
+         <---------------------------               <--------------------------------------------------
+ReactJS    ----------------------->    Python       --------------------------------------------------> Database
+        The user wants his profile     Ruby                                                            { MySQL
+                                       Scala                                                             SQLite
+                                       .NET                                                              MariaDB
+                                       Erlang                                                            PostgreSQL }
+
+                                                                      
+
+Database

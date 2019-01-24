@@ -1,0 +1,7 @@
+
+void someFunction(int a, int b) { ... }
+int a, int b 등을 Parameter라고 하고
+(int a, int b)는 실제 값이 존재하지 않고 형태를 나타내 줄 뿐 
+
+someFunction(1, 2);
+이렇게 들어가 있는 1, 2를 인수(Argument)

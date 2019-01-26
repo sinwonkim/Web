@@ -1,0 +1,42 @@
+객체지향 프로그래밍의 특징 중에 다형성(폴리모피즘,Polymorphism)이라는 것이 있다.
+
+다음과 같이 Bouncer(경비원) 클래스 가 있다. 경비원 클래스는 다음과 같이 동물을 짖게 하여 건물을 지킨다고 한다.
+
+
+Bouncer.java
+
+public class Bouncer {
+    public void barkAnimal(Animal animal) { // Animal은 부모 클래스
+        if (animal instanceof Tiger) { // Tiger는 자식클래스
+            System.out.println("어흥");
+        } else if (animal instanceof Lion) { // Lion은 자식 클래스 
+            System.out.println("으르렁");
+        }
+    }
+
+    public static void main(String[] args) {
+        Tiger tiger = new Tiger();
+        Lion lion = new Lion();
+
+        Bouncer bouncer= new Bouncer();
+        bouncer.barkAnimal(tiger);
+        bouncer.barkAnimal(lion);
+    }
+}
+barkAnimal 메소드는 입력으로 받은 animal 객체가 Tiger의 객체인 경우에는 "어흥"을 출력하고 Lion 객체인 경우에는 "으르렁"을 출력하게 한다.
+
+# instanceof 는 특정 객체가 특정 클래스의 객체인지를 조사할 때 사용되는 자바의 내장 키워드이다. animal instanceof Tiger 는 
+"animal 객체가 new Tiger로 만들어진 객체인가?"를 묻는 조건식이다.
+
+barkAnimal 메소드의 입력자료형은 Tiger나 Lion이 아닌 Animal이다. 하지만 barkAnimal메소드를 호출할떄는 tiger또는 lion객체를 전달할 수가 있다.
+이게 가능한 이유는 Tiger클래스나 Lion클래스가 Animal이라는 부모 클래스를 상속한 자식 클래스이기 떄문이다. 자식클래스에 의해서 만들어진 객체는
+언제나 부모 클래스의 언제나 부모 클래스의 자료형으로 사용할 수가 있다.
+
+즉,다음과 같은 코딩이 가능하다.
+
+Animal tiger = new Tiger(); // 부모 클래스 Animal  자식 클래스 Tiger의 객체 tiger
+Animal lion = new Lion();
+
+
+인터페이스는 다중상속o
+일반 클래스는 단일 상속만 가능

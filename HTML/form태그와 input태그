@@ -1,0 +1,111 @@
+HTML내에서의 접근 방식에 따른 특징 
+id는 하나의 페이지 안에서 이름이 유일해야 하고,
+name은 중복될 수 있다. 
+그러므로 화면을 구성하는 모든 것들에게 따로따로 접근할떄는
+id 값을 이용하고, 
+구성하는 모든 것 들 중에서 그룹으로 접근하고 싶을땐 
+name을 활용하는 식으로 편의성을 가질 수 있다. 
+
+단순히 퍼블리싱을 할 떄도 id와 name은 중요하지만
+웹 개발에 있어서 name의 존재는 아주 특별하다.
+바로 폼 태그와 액션을 활용한 서버와 클라이언트간의 호출관계
+속에서 각각의 태그들을 "식별"하기 위한 엘리먼트가 바로 
+name이기 떄문이다. 
+id는 jsp페이지 안에서만 활용되지만 name은 컨트롤러로 가져가서  활용할 수 있다.
+해서 폼을 서브밋해서 액션을 탔을 떄 컨트롤러에서 리퀘스트.get파라미터("네임")으로 값을 가져올 수 있는 것이다.
+--------- leageOfLegend.jsp 페이지의 바디라고 생각해보자--
+<BODY>
+
+ <FORM action="gogo.do">
+
+<input type="text" id="input1" name="input1" value="첫번째 인풋"/>
+
+<input type="text" id="input2" value="두번째 인풋" />
+
+<input type="text" name="input1" value="세번째 인풋" />
+
+<input type="text" name="input2" value="네번째 인풋" />
+
+<input type="text" value="다섯번째 인풋" />
+
+</FORM>
+
+</BODY>
+
+여담으로 위와 같은 페이지의 헤드에 자바스크립트가 존재할 때
+document.getElementById("id를 적어준다")함수를 이용하여 
+인풋에 대한 값들을 컨트롤 할 수는 있지만 다른 태그들은 
+name만 있고 id가 없으므로 document.getelementsbyname("name")로 접근해야 한다. 
+그리고 다섯번째 태그의 경우 document.getByTagName()을 
+통하여 인풋 태그의 몇번째 인덱스인지로 접근해야만 한다.
+
+
+HTML 입력태그 
+<input></input> : 입력창 폼 태그 <input type="속성">으로 
+종류를 정해줌 
+<input type>의 종류 
+- hidden : 사용자에게는 보이지 않지만 서버로 넘겨지는 값 
+- text : 한 줄 텍스트 입력이 가능한 텍스트 상자
+- search : 검색 상자
+- tel : 전화번호 입력 상자
+- url : 인터넷 주소 입력 상자
+- password
+: email
+-datetime / datetime-local / date /month / week / time
+-number : 숫자조절 화살표 
+-range : 숫자조절 슬라이드 막대
+-color : 색상표
+- checkbox ( name을 같게하던, 다르게 하던 모두 선택가능)
+-radio 주어진 항목에서 1개만 선택가능( radio경우 같은 name으로 묶여있을때만 선택지중 하나만 선택 가능, name다르게 하면 
+name이 다른 선택항목은 모두 선택 가능함)
+-file : 파일첨부 버튼
+-submit : 서버전송 버튼
+-image : submit버튼 대신 사용할 이미지
+-reset : 리셋 버튼
+-button : 버튼 삽입 
+
+ex) 예시
+<input type="종류" name="이름" id="id값" value="서버로 넘길 값">
+:value는 서버로 넘기는 값이다. id값과 연동된 자바스크립트 
+프로그램이 input의 value값을 서버로 넘겼다가 반응함
+
+ex) 검색폼 만들기
+	<form action="search.php" method="POST">
+		<input type="text" title="검색">	
+		<input type="submit" value="검색">
+	</form>
+[속성] 
+- size : 인풋 필드 길이
+- maxlength : 텍스트 필드에 입력 가능한 최대 문자수 
+- minlength : 텍스트 필드에 입력 가능한 최소 문자수 
+- value : 텍스트 필드 요소가 화면에 표시될 때 텍스트 필드 
+            부분에 처음 표시될 내용으로 처음 화면에 나타나는 
+            값을 의미한다. 
+      --- input태그의 사용자가 입력한 값을 의미, 미리 값을 입력           하는 경우에도 사용  value="1" 이런식으로 
+
+- name 
+- min 최소 max 최대 
+   step : 한번에 증가/감소하는값 :number-range속성이나 날짜   속성에서 사용
+-onclick="window.open('wnth')"/"window.close('주소')"
+    : 새창에서 열기,닫기 옵션 : button 속성에서 사용 
+-autofocus : 자동 커서 (페이지가 로딩되자마자 커서가 input창에 떠있음)
+-placeholder : input창에 미리 써있는 문구  (입력을 위해 클릭시 
+없어짐) 가능한 type속성 : email, number,password,search,tel,text,url
+-readonly : 쓰지못하고 읽게만 할 수 있다. (속성값 =true,false)
+-required : 입력 후 조건이 맞지 않을떄 경고창이 뜬다.
+-dsabled : 폼 자체를 사용자가 제어/사용할 수 없게한다.(폼기능 정지)
+
+
+
+
+
+
+
+
+
+
+
+출처 : 
+https://m.blog.naver.com/PostView.nhn?blogId=imansei0&logNo=110168823349&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F#
+
+http://blog.naver.com/PostView.nhn?blogId=onlyloveciel&logNo=220895145391&parentCategoryNo=&categoryNo=64&viewDate=&isShowPopularPosts=true&from=search

@@ -1,0 +1,86 @@
+JSP 파일에 자바형식의 코드를 사용하면 불편한 점을 한방에
+해결할 수 있는 EL(Expression Language)과 JSTL(Jsp standard 
+Tag Libaray)를 이용해 코드를 간결하게 사용하는 방법
+ 
+EL은 개념은 해석 그대로 표현언어를 이해하고 속성 값들을
+편리하게 출력하기 위해 제공된 언어이며, 
+JSTL은 표준 액션태그로 처리하기 힘든 부분을 담당
+
+JSP 2.0버젼에서 추가된 스크립트 언어인 EL(Expression Language)은 <%= abc %>를 ${abc}로 간단하게 사용할 수 있다.
+
+JSTL의 Core에서 c를 이용해 <%= if%>문을 <c:if> 
+<c:forEach>로 대체하여 사용한다.
+
+EL (Expression Language)
+<%= %>, out.println()과 같은 자바코드를 
+더 이상 사용하지 않고 좀더 간편하게 출력을 지원하기 위한 도구.
+배열이나 컬렉션에서도 사용되고, JavaBean의 프로퍼티에서도 
+사용됨 
+
+JSTL(Jsp Standard Tag Library)
+JSTL은 자신만의 태그를 추가할 수 있는 기능을 제공하고 있다.
+<jsp:include>나 <jsp:usebean>과 같은 커스텀 태그처럼
+연산이나 조건문이나 반복문인 
+if문 , for문, DB를 편하게 처리할 수 있는것이 JSTL 입니다.
+
+JSTL의 Core Library
+
+1.<c:set>
+ <c:set var="num" value="100">
+<c:set var="num" value="100" scope="page">
+
+2.<c:out>
+<c:out value="출력할 값" default="value가 null값일 경우 출력할 값">
+
+3.<c:remove>
+<c:remove var="변수명" scope="영역"/>
+
+4. <c:if>
+<c:if test="조건식" var="조건을 검사하고 return되는 bool값을 저장할 변수" scope="bool 변수가 사용될 범위">
+
+5.<c:choose>
+<c:when test="조건식">
+<c:otherwise>
+
+6.<c:foreach>
+<c:foreach begin="시작값" end="끝값" step="증가값" var="count값이 저장될 변수"/>
+<c:foreach var="변수" items="배열 or 컬렉션"/>
+
+7.<c:forTokens>
+<c:forTokens items="배열or컬렉션" delims="구분자" var="" begin="" end="" step="" />
+
+8. <c:catch>
+
+try {
+자바에서는 여기에 행동
+} catch ( Exception err) {
+ 에러 내용 표시
+}
+
+9. <c:redirect>는 아래와 같이 파라미터 값을 지정된 
+url로 보냄 
+<c:redirect url="boardList.jsp">
+
+<c:import>는 <jsp:include>와 비슷
+
+<c: url>은 <c:set>과 비슷하며 GET방식으로 파라미터를 전달
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+출처 :https://hunit.tistory.com/203 
+
+

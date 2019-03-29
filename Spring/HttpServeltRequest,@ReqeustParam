@@ -1,0 +1,85 @@
+HttpServletRequest 
+HttpServletRequest를 사용하면, 값을 받아올 수 있다.
+예를들어, 아이디, 비밀번호 등의 데이터를 컨트롤러로 보냈을떄,
+HttpServletRequest 객체안에 모든 데이터들이 들어가게 된다.
+getParameter()
+getParameter() 메소드는 반환타입이 String 타입이다.
+
+ex)
+String id	= HttpservletRequest httpServletRequest("id");
+HttpServletRequest객체안의 id값을 String 타입으로 가져온다.
+
+@Controller
+public class HomeController {
+	@RequestMapping("/board/confirmId")
+	public String confirm(HttpServletRequest httpServletRequest, Model model)
+  Stirng id	= httpServletRequest.getParameter("id");
+
+return "board/confirm";
+}
+id와 pw 는 HttpServletRequest 객체를 통해 받아오고
+Model 객체를 이용해서 뷰로 값을 넘기고 있다.
+
+board/confirmld.jsp
+
+<body>
+id : ${id}<br>
+pwd : ${pwd}
+</body>
+뷰
+
+
+@RequestParam을 이용한 값 받아오기 
+@RequestParam은 HttpServletReqeust 객체와 같은 역할을 한다.
+
+HomeController.java
+
+@Controller
+public class HomeController {
+	@RequestMapping("/board/checkId")
+	public String checkId(@RequestParam("id")String id , @RequestParam("pwd") String pwd, Model model) 
+}
+
+checkId 메소드의 인자값으로 @RequestParam() 어노테이션을 넣어서 값을 받아온다.
+
+@RequestParam("가져올 데이터의 이름") [데이터타입] [가져온데이터를 담을 변수]
+
+위와 같은 형식으로 사용한다.
+
+그리고  Model 객체를 이용해서, 뷰로 값을 넘겨준다.
+
+@Controller
+
+@RequestMapping("/board/list")
+public String boardList(@RequestParam("id")String id , Model model){
+	
+model.addAttribute("id",id)
+	return "boardList";
+}
+
+boardList 메소드의 인자값으로 @RequestParam() 어노테이션을
+넣어서 값을 받아온다.
+
+@RequestParam("가져올 데이터의 이름") [데이터타입][가져온데이터를 담을 변수]
+위와 같은 형식으로 사용한다.
+
+그리고 Model 객체를 이용해서, 뷰로 값을 넘겨준다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+참조글 :
+https://hongku.tistory.com/119

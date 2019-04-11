@@ -1,0 +1,5 @@
+HTML(콘텐츠 계층) : 페이지의 콘텐츠가 관리되는 부분  HTML은 페이지의 구조를 만들고 이를 부여 함 
+CSS(표현 계층) : HTML 콘텐츠가 보여지는 방법을 서술하는 규칙들(background,edge,size,color,font)을 사용하여 HTML
+                페이지를 확장함 
+JavaScript(행위 계층) : 페이지의 동작을 변경하며 역동성을 부여 
+      

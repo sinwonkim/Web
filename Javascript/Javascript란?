@@ -20,7 +20,7 @@ ex)
   </head>
   <body>
     <h1>h1크기</h1>
-    <script src="js파일경로.js"></script>
+    <script src="js파일경로.js"></script> // script파일들이  닫는 </body>태그 이전에 추가했는데 이 위치가 자바스크립트 위치중 최적이라고 함 
     <p>문단 태그 </p>
   </body>
 </html>

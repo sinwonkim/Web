@@ -1,0 +1,25 @@
+다른 언어에서도 객체에 관해서 많이 논하고 있다. 
+대부분의 객체가 어떠한 언어라도 비슷하게 객체란게 존재한다면 이런식으로 의미를 풀이해 놓은 곳이 많다.
+자바스크립트 내에서는 객체안에서 변수와 메서드가 조금은 다르게 풀이되는 것 같다. 
+
+객체란? 현실 세계에서 인지하는 물체에 대한 모델을 만들기 위해 
+변수와 함수를 그룹화 하는것을 말함 
+
+자바스크립트에서 객체와 함수는 객체 내에서 새로운 이름으로 불린다. 
+
+객체내에서
+변수 -> 속성(property) 객체에 대한 정보를 제공함 
+함수 -> 메서드(method) 객체에 관련된 작업을 표현하기 위해 사용함 
+
+
+
+var daveKim = {
+
+    firstName :'dave',
+    lastName : 'kim',
+    age :28,                        -------- 속성 property
+    hobby : ['coding','reading','playingGame'],                       -------- 배열
+    
+    checkFullName : function() { return this.firstName + this.lastName;} -----------함수 
+    };
+    console.log(daveKim.checkFullName()); ----------------function calling 

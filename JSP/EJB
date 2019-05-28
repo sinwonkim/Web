@@ -1,0 +1,11 @@
+EJB(Enterprise Java Bean)
+Java Bean이란 자바 객체를 재사용 가능하게 
+컴포넌트화 시킬 수 있는 코딩 방침을 정의한 것을
+의미
+
+bean은 쉽게 componenet 또는 객체 
+Java bean 스펙에 맞게 구현된 코드를 웹에서 
+쉽게 사용하기 위해서 JSP 표준 액션 태그를 지원
+<jsp:useBean> 
+<jsp:getProperty>
+<jsp:setProperty>

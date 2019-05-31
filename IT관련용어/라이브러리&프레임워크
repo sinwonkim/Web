@@ -1,0 +1,12 @@
+라이브러리
+-> 자주 사용되는 로직을 재사용하기 편리하도록 잘 정리한
+    일련의 코드들의 집합
+
+ 프레임워크
+->기본적 뼈대
+
+프웍종류
+-자바프레임워크 - spring,egov
+- ORM프레임워크 - myBatis,Hiberante
+- 자바스크립트 프레임워크 - AngularJS,Reacle
+- 프론트엔드 프레임워크 - Bootstrap,MDL

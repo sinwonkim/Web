@@ -1,0 +1,16 @@
+HTML
+-웹 페이지를 만들기 위한 언어
+
+HTTP(Hypertext Transfer Protocol)
+-웹상 데이터 송수신 통신규약
+-웹상에서 정보를 주고 받을 수 있는 프로토콜
+-WebServer와 WebBrowser사이의 문서 전송 프로토콜
+-웹상에서 하이퍼텍스트(링크 포함한 텍스트)를 전송하기 위한 규약
+-80포트 사용
+
+
+HTTP 요청 
+Web Browser가 Web Server로 request 
+
+HTTP 응답
+Web Server가 Web browser로 응답

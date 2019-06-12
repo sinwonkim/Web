@@ -1,0 +1,5 @@
+document.getElementById : 단 하나의 id를 조회하는 메소드
+
+document.querySeletor : 단 하나의 엘리먼트 조회하는 메소드
+
+document.querySelectorAll : 모든 객체를 조회한다는 점 

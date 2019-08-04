@@ -1,0 +1,22 @@
+HyperMedia: 하이퍼링크가 설정되어 있는 음성, 영상, 그림 문서들
+
+HyperText: 하이퍼링크가 설정되어 있는 텍스트 문서
+
+HyperLink: 웹 문서와 웹 문서를 서로 연결해 놓은 형태
+
+DNS(Domain Name System): DNS를 컴퓨터가 인식할 수 있는 Ip Address로 변환해주는 컴퓨터 체계
+
+URL(Uniform Resource Locator)
+- A standard address system for locating information on the Internet
+- Access to information on the internet Location, File name
+- form : protocol://serverAddress:port/directory/filesname
+- Basic port Number : HTTP-80, FTP-21, PUTTY-22, TELNET-23, News-119, Gopher-70
+
+Internet related terms
+plug-in :A web browser is a program that allows you to run programs that can not run with its own functions
+        (Acrobet Reader, Quick Time, Real Plyaer, window media)
+Proxy Server: A surrogate server that response to the client's request 
+HTML(HyperText Markup Language): Language for creating web Pages
+XML(Extensible Markup Language): XML is Next Generation Internet language to improved language instead of XML's complexity and HTML's simple 
+Markup: Markup Language is of Programming's lanaguages for use tags to make document and data Structure
+CGI(Common Gateway Interface : CGI is concept for web server and external program  data exchange

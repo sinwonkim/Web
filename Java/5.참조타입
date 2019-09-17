@@ -58,3 +58,20 @@ ex)
 boolean result = str1.equals(str2);
 
 str1과 str2를 비교 
+
+타입
+ㅁ 기본타입(정수) byte, char,short,int,long
+ㅁ 기본타입(실수) float,double
+ㅁ 기본타입(논리) boolean
+ㅁ 참조타입 클래스, 인터페이스 
+
+자바에서 프로그램 실행을 위해 main() 메소드가 필요하다는 것을 알고 있다.
+
+그러나 publuc static void main(String[] args) {
+
+ // 실행할 코드 
+}
+
+이건 String[] args = {};  java클래스로 프로그램을 실행하면 JVM은 길이가 0인 String 배열을 먼저 생성하고 main() 메소드를 호출할 때
+매개값으로  전달한다.
+

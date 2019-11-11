@@ -6,11 +6,11 @@ JSON.parse와, JSON.stringify
             , Age: "29"
         }
         
-        var sPerson = JSON.stringify(oData); // stringify는 json -> string 
-                                                JavaScript 객체 또는 값을 JSON 문자열로 변환
+        var sPerson = JSON.stringify(oData); // stringify는 
+                                                JavaScript 객체 값을  -> JSON 문자열로 변환
                                                 
-        var oPerson = JSON.parse(sPerson); // parse는 string -> json 
-                                             문자열로 설명되는 JavaScript 값 또는 오브젝트를 구성한다.
+        var oPerson = JSON.parse(sPerson); // parse는 
+                                              JSON 데이터를 -> 브라우저가 사용할 수 있는 자바스크립트 객체로 변환한다.
         
         console.log(sPerson);   // {"Name":"SooYoung","Age":"29"}
         
@@ -41,4 +41,4 @@ json이라는 개체는 브라우저에서 지원해주는 개체
 
 
 
-출처 : https://fonch.tistory.com/entry/Javascript-JSONparse-JSONstringify
+일부 참조  : https://fonch.tistory.com/entry/Javascript-JSONparse-JSONstringify

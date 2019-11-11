@@ -7,7 +7,10 @@ JSON.parse와, JSON.stringify
         }
         
         var sPerson = JSON.stringify(oData); // stringify는 json -> string 
+                                                JavaScript 객체 또는 값을 JSON 문자열로 변환
+                                                
         var oPerson = JSON.parse(sPerson); // parse는 string -> json 
+                                             문자열로 설명되는 JavaScript 값 또는 오브젝트를 구성한다.
         
         console.log(sPerson);   // {"Name":"SooYoung","Age":"29"}
         

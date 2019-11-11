@@ -1,0 +1,41 @@
+JSON.parse와, JSON.stringify
+
+
+        var oData = {
+            Name: "SooYoung"
+            , Age: "29"
+        }
+        
+        var sPerson = JSON.stringify(oData); // stringify는 json -> string 
+        var oPerson = JSON.parse(sPerson); // parse는 string -> json 
+        
+        console.log(sPerson);   // {"Name":"SooYoung","Age":"29"}
+        
+        console.log(oPerson.Name); // SooYoung
+        
+
+json이라는 개체는 브라우저에서 지원해주는 개체 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+출처 : https://fonch.tistory.com/entry/Javascript-JSONparse-JSONstringify

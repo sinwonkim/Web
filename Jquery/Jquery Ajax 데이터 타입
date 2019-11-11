@@ -1,0 +1,24 @@
+contentType 
+- 서버에 데이터를 보낼 때 사용 content - type 헤더의 값 
+  default value는 application/x - www - form -unlencoded 
+  
+dataType // text,html, xml, jsonp, script
+- 서버에서 반환되는 데이터 형식을 지정함 생략했을 경우는 Jquery MIME 타입 등을 보면서 자동으로 결정 
+
+type // GET, POST, DELETE, PUT 
+- HTTP 통신의 종류를 설정한다.
+
+complete 
+- AJAX 통신 완료될 떄 호출되는 함수 SUCCESS나 ERROR가 호출된 후에 호출되는 Ajax Event 
+
+beforeSend
+- AJAX에 의해 요청이 전송되기 전에 호출되는 Ajax Event 반환값 false로 설정하면 AJax 전송취소 가능
+
+error 
+- ajax 통신 실패 시 호출되는 Ajax Event 
+
+success
+- Ajax 통신이 성공하면 호출되는 Ajax Event 
+  ajax 통신 성공시 data와 dataType 지정한 값 2개의 값 받는다. 
+  
+ 

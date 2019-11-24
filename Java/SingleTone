@@ -1,0 +1,34 @@
+Singletone Example 
+
+public class SingletoneT {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Single s1 = Single.getSingletone();
+		s1.setWord("This object is shared");
+		Single s2 = Single.getSingletone();
+		System.out.println(s2.word);
+	}
+}
+
+class Single {
+	String word = "OMG";
+	
+	private static Single singletone = new Single();
+	
+	private Single() {
+		
+	}
+	static Single getSingletone() {
+		return singletone;
+	}
+	
+	public void setWord(String newValue) {
+		this.word = newValue;
+	}
+	
+}
+
+
+----Console-------
+This object is shared

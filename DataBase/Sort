@@ -1,0 +1,76 @@
+정렬 ORDER BY 구 
+
+기본 구조 
+SELECT 열명 FROM 테이블명 WHERE 조건식 ORDER BY 열명
+
+SELECT 명령의 ORDER BY 구를 사용하여 검색결과의 행 순서를 바꿀 수 있다. 
+
+EX)
+<Member>
+name age
+ho   35
+hi   20
+ha   19
+
+SELECT NAME,AGE FROM Member ORDER BY age;
+
+DESC(descendant) 값이 점점 내려감 
+ASC(acendant) 값이 점점 상승
+
+결과 값 제한하기 - LIMIT 
+SELECT 명령에서는 결과값으로 반환하는 행을 제한할 수 있다. 
+
+SELECT 열명 FROM 테이블명 LIMIT 행수 [OFFSET 시작행]
+
+LIMIT 구는 표준 SQL은 아니다. MySQL과 PostgreSQL에서 사용할 수 있는 문법
+LIMT 구는 SELECT 명령의 마지막에 지정하는 것으로 WHERE구나 ORDER BY 구의 뒤에 지정한다.
+
+행수 제한 
+SELECT 열명 FROM 테이블명 WHERE 조건식 ORDER BY 열명 LIMIT 행수 
+
+<testLimit>
+no
+1
+2
+3
+4
+5
+6
+7
+
+testLimit에 LIMIT 3으로 상위 3건만 획득함 
+SELECT * FROM testLimit LIMIT 3; 
+
+LIMIT로 지정하는 것은 '최대행수'이다. 
+만약 테이블에 하나의 행만 있다면 LIMIT 3으로 지정해도 1개의 행이 반환된다. 
+
+LIMIT 3을 한 것과 동일한 결과를 얻기 위해 WHERE 구에 조건을 지정할 수도 있다. 
+ex) WHERE no <= 3 조건을 붙인다면 1,2,3  no 1, 2, 3 행이 반환되므로 
+
+WHERE과 LIMIT는 기능과 내부처리 순서가 전혀 다르다. 
+LIMIT는 반환할 행수를 제한하는 기능으로, WHERE 구로 검색한 후 ORDER BY 로 정렬된 뒤 최종적으로 
+처리된다. 
+
+ex) no 열을 내림차순으로 정렬한 뒤에 상위 3개에 행으로 제한하라 
+<NOTABLE>
+no
+1
+2
+3
+4
+5
+6
+7
+
+SELECT no FROM NOTABLE ORDERY BY no DESC LIMIT 3;
+
+ORACLE RDBMS경우 LIMIT 대신 ROWNUM이 있음
+SELECT no FROM NOTABLE ORDERY BY no DESC WHERE ROWNUM <=3;
+
+ROWNUM은 CLIENT에게 결과가 반환될 때 각 행에 할당하는 행 번호이다.
+단, ROWNUM으로 행을 제한할 때는 WHERE 구로 지정하므로 정렬하기 전에 처리되어 LIMIT로 행을 제한한 경우와 결과값이 다르다. 
+
+LIMIT구의 OFFSET은 생략 가능하며 기본값은 0이다. 
+OFFSET에 의한 시작 위치 지정은 LIMIT 뒤에 기술한다. 
+
+SELECT 열명 FROM 테이블명 LIMIT 행수 OFFSET 위치;
